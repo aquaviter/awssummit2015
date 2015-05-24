@@ -19,6 +19,14 @@
         "Tags" : [ {"Key" : "Application", "Value" : { "Ref" : "AWS::StackId"} } ]
       }
     },
+    "Subnet2" : {
+      "Type" : "AWS::EC2::Subnet",
+      "Properties" : {
+        "VpcId" : { "Ref" : "VPC" },
+        "CidrBlock" : "10.1.1.0/24",
+        "Tags" : [ {"Key" : "Application", "Value" : { "Ref" : "AWS::StackId"} } ]
+      }
+    },
     "InternetGateway" : {
       "Type" : "AWS::EC2::InternetGateway",
       "Properties" : {
@@ -100,6 +108,10 @@
         "Value" :  { "Ref" : "VPC" }
     },
     "Subnet" : {
+      "Description" : "SubnetId of the subnet",
+      "Value" :  { "Ref" : "Subnet" }
+    },
+    "Subnet2" : {
       "Description" : "SubnetId of the subnet",
       "Value" :  { "Ref" : "Subnet" }
     }
